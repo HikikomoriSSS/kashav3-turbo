@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Архитектурные паттерны в TypeScript</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+        color: #333;
+        line-height: 1.5;
+      }
+      h1, h2 {
+        color: #2c3e50;
+      }
+      .nav {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+      .nav button {
+        padding: 8px 16px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background: #f8f9fa;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: all 0.2s;
+      }
+      .nav button.active {
+        background: #007bff;
+        color: white;
+        border-color: #007bff;
+      }
+      .form-group {
+        margin-bottom: 12px;
+      }
+      label {
+        display: inline-block;
+        width: 80px;
+        font-weight: bold;
+      }
+      input {
+        padding: 6px 10px;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button#submit {
+        padding: 8px 16px;
+        background: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 5px;
+      }
+      button#submit:hover {
+        background: #218838;
+      }
+      .error {
+        color: #dc3545;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .card {
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 6px;
+        margin-top: 10px;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      }
+      .card h3 {
+        margin: 0 0 8px 0;
+        color: #007bff;
+      }
+      .card p {
+        margin: 0 0 10px 0;
+      }
+      .card button {
+        background: #dc3545;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .card button:hover {
+        background: #c82333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Архитектуры</h1>
+
+    <!-- Меню переключения паттернов -->
+    <div class="nav">
+      <button id="btn-mvp" class="active">MVP</button>
+      <button id="btn-mvc">MVC</button>
+      <button id="btn-mvvm">MVVM</button>
+      <button id="btn-clean">Clean</button>
+      <button id="btn-onion">Onion</button>
+    </div>
+
+    <h2 id="pattern-title">Текущий паттерн: MVP (Model-View-Presenter)</h2>
+
+    <!-- Форма добавления пользователя -->
+    <div class="form-group">
+      <label for="username">Имя:</label>
+      <input type="text" id="username" placeholder="Введите имя" />
+    </div>
+    <div class="form-group">
+      <label for="age">Возраст:</label>
+      <input type="number" id="age" placeholder="Введите возраст" />
+    </div>
+    <button id="submit">Отправить</button>
+
+    <div id="error" class="error"></div>
+
+    <h2>Список пользователей</h2>
+    <div id="list"></div>
+
+    <!-- Подключение точки входа TypeScript через Vite -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
